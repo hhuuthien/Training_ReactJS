@@ -1,0 +1,8 @@
+Phân biệt state & props
+
+Giống: Là 2 thuộc tính có sẵn của rcc để binding dữ liệu lên giao diện
+Khác:
+    - State:    + chứa dữ liệu thay đổi trên giao diện từ 1 event (1 xử lý từ người dùng)
+                + có thể set lại giá trị thông qua setState
+    - Props:    + chứa dữ liệu từ component cha truyền vào
+                + không thể thay đổi giá trị (read-only)
