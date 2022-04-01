@@ -1,0 +1,17 @@
+#thongSoKyThuat {
+  list-style-type: none;
+  padding: 0;
+}
+
+#thongSoKyThuat li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+#thongSoKyThuat li:hover {
+  background-color: whitesmoke;
+}

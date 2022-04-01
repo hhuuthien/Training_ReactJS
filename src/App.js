@@ -7,6 +7,11 @@ import ThayDoiMauSac from "./components/StateDemo/ThayDoiMauSac";
 import StyleComponent from "./components/StyleComponent/StyleComponent";
 import ChonXe from "./components/StateDemo/ChonXe";
 import RenderArray from "./components/RenderArray/RenderArray";
+import DemoProps from "./components/Props/DemoProps/DemoProps";
+import ShoeShop from "./components/Props/DemoProps/ShoeShop";
+import BaiTapXemChiTiet from "./components/Props/BaiTapXemChiTiet/BaiTapXemChiTiet.jsx";
+
+import "./App.css";
 
 function App() {
   return (
@@ -18,7 +23,10 @@ function App() {
     // <StyleComponent />
     // <ThayDoiMauSac />
     // <ChonXe />
-    <RenderArray />
+    // <RenderArray />
+    // <DemoProps />
+    // <ShoeShop />
+    <BaiTapXemChiTiet />
   );
 }
 
