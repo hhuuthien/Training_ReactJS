@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GioHang from "./GioHang";
 import Phone from "./Phone";
 
 export default class BaiTapXemChiTiet extends Component {
@@ -43,6 +44,57 @@ export default class BaiTapXemChiTiet extends Component {
 
   state = {
     detailProduct: this.arrayPhone[0],
+    gioHang: [],
+  };
+
+  deleteFromCart = (idClicked) => {
+    if (window.confirm("Bạn có muốn xoá sản phẩm không?")) {
+      let gioHang = this.state.gioHang;
+
+      let gioHangMoi = gioHang.filter((sanPham) => sanPham.maSP !== idClicked);
+
+      this.setState({
+        gioHang: gioHangMoi,
+      });
+    }
+  };
+
+  thayDoiSoLuong = (idClicked, soLuongThayDoi) => {
+    let gioHang = this.state.gioHang;
+
+    let sanPhamTrongGioHang = gioHang.find((sp) => sp.maSP === idClicked);
+
+    if (sanPhamTrongGioHang.soLuong === 1 && soLuongThayDoi === -1) {
+      this.deleteFromCart(idClicked);
+      return;
+    }
+
+    sanPhamTrongGioHang.soLuong += soLuongThayDoi;
+
+    this.setState({
+      gioHang: gioHang,
+    });
+  };
+
+  addToCart = (phoneClicked) => {
+    // lấy giỏ hàng hiện tại
+    let gioHang = this.state.gioHang;
+
+    // thêm sản phẩm vào giỏ hàng
+    let sanPhamTrongGioHang = gioHang.find((sp) => sp.maSP === phoneClicked.maSP);
+
+    if (sanPhamTrongGioHang) {
+      // có rồi, tăng số lượng
+      sanPhamTrongGioHang.soLuong += 1;
+    } else {
+      // chưa có, thêm mới, thêm thuộc tính số lượng
+      gioHang.push({ ...phoneClicked, soLuong: 1 });
+    }
+
+    // set lại state
+    this.setState({
+      gioHang: gioHang,
+    });
   };
 
   showInfo = (phoneClicked) => {
@@ -53,7 +105,7 @@ export default class BaiTapXemChiTiet extends Component {
 
   renderPhone() {
     return this.arrayPhone.map((phone, index) => {
-      return <Phone phone={phone} key={index} showInfo={this.showInfo} />;
+      return <Phone phone={phone} key={index} showInfo={this.showInfo} addToCart={this.addToCart} />;
     });
   }
 
@@ -102,6 +154,8 @@ export default class BaiTapXemChiTiet extends Component {
   render() {
     return (
       <div className="container p-5">
+        <GioHang gioHang={this.state.gioHang} thayDoiSoLuong={this.thayDoiSoLuong} deleteFromCart={this.deleteFromCart} />
+
         <div className="row">{this.renderPhone()}</div>
 
         {this.renderDetailPhone()}

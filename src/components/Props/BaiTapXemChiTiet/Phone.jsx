@@ -14,6 +14,16 @@ export default class Phone extends Component {
           <button className="btn btn-primary" onClick={() => this.props.showInfo(phone)}>
             Xem chi tiết
           </button>
+          <br />
+          <button
+            className="btn btn-success mt-2"
+            onClick={() => {
+              this.props.addToCart(phone);
+            }}
+          >
+            <i className="fa-solid fa-cart-plus mr-2"></i>
+            Thêm vào giỏ hàng
+          </button>
         </div>
       </div>
     );

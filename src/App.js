@@ -12,6 +12,7 @@ import ShoeShop from "./components/Props/DemoProps/ShoeShop";
 import BaiTapXemChiTiet from "./components/Props/BaiTapXemChiTiet/BaiTapXemChiTiet.jsx";
 
 import "./App.css";
+import Number from "./components/DemoRedux/Number";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
     // <RenderArray />
     // <DemoProps />
     // <ShoeShop />
-    <BaiTapXemChiTiet />
+    // <BaiTapXemChiTiet />
+    <Number />
   );
 }
 
