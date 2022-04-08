@@ -50,3 +50,13 @@ export default class TangGiamFontSize extends Component {
 //     + Xác định state
 //     + Binding state lên giao diện
 //     + Xử lý thay đổi state qua hàm setState
+
+/*
+Các bước xử lý redux:
+  + Xây dựng giao diện, chia component
+  + Binding dữ liệu tĩnh
+  + Xác định dữ liệu thay đổi (state)
+  + Tổ chức state lên redux
+  + Map state về component, mapStateToProps
+  + Tại component chứa nút xử lý, mapDispatchToProps
+*/

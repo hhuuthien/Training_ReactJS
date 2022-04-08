@@ -6,13 +6,14 @@ import TangGiamFontSize from "./components/StateDemo/TangGiamFontSize";
 import ThayDoiMauSac from "./components/StateDemo/ThayDoiMauSac";
 import StyleComponent from "./components/StyleComponent/StyleComponent";
 import ChonXe from "./components/StateDemo/ChonXe";
+import ChonXeRedux from "./components/DemoRedux/ChonXeRedux";
 import RenderArray from "./components/RenderArray/RenderArray";
 import DemoProps from "./components/Props/DemoProps/DemoProps";
 import ShoeShop from "./components/Props/DemoProps/ShoeShop";
 import BaiTapXemChiTiet from "./components/Props/BaiTapXemChiTiet/BaiTapXemChiTiet.jsx";
-
 import "./App.css";
 import Number from "./components/DemoRedux/Number";
+import BaiTapGioHang from "./components/DemoRedux/BaiTapGioHang";
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
     // <DemoProps />
     // <ShoeShop />
     // <BaiTapXemChiTiet />
-    <Number />
+    // <Number />
+    // <ChonXeRedux />
+    <BaiTapGioHang />
   );
 }
 
