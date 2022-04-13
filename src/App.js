@@ -14,6 +14,7 @@ import BaiTapXemChiTiet from "./components/Props/BaiTapXemChiTiet/BaiTapXemChiTi
 import "./App.css";
 import Number from "./components/DemoRedux/Number";
 import BaiTapGioHang from "./components/DemoRedux/BaiTapGioHang";
+import MainGame from "./components/GameXucXac/MainGame.jsx";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
     // <BaiTapXemChiTiet />
     // <Number />
     // <ChonXeRedux />
-    <BaiTapGioHang />
+    // <BaiTapGioHang />
+    <MainGame />
   );
 }
 

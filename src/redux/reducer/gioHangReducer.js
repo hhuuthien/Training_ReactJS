@@ -20,6 +20,21 @@ export const gioHangReducer = (state = DEFAULT_STATE, action) => {
       });
       return [...gioHangMoi];
     }
+    case "TANG_GIAM_SO_LUONG": {
+      let gioHang = [...state];
+
+      let sanPham = gioHang.find((sp) => sp.maSP === action.maSP);
+
+      if (sanPham) {
+        if (sanPham.soLuong === 1 && action.soLuong === -1) {
+          console.log("Không được");
+        } else {
+          sanPham.soLuong += action.soLuong;
+        }
+      }
+
+      return gioHang;
+    }
     default:
       return state;
   }

@@ -2,6 +2,22 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class GioHangRedux extends Component {
+  tinhTongSoLuong() {
+    // Tiki style
+    // return this.props.gioHang.length;
+
+    // Lazada style
+    return this.props.gioHang.reduce((soLuong, sanPham) => {
+      return (soLuong += sanPham.soLuong);
+    }, 0);
+  }
+
+  tinhTongTien() {
+    return this.props.gioHang.reduce((total, sanPham) => {
+      return (total += sanPham.giaBan * sanPham.soLuong);
+    }, 0);
+  }
+
   renderGioHang() {
     return this.props.gioHang.map((sanPham, index) => {
       return (
@@ -11,7 +27,25 @@ class GioHangRedux extends Component {
           <td>
             <img src={sanPham.hinhAnh} alt="..." width={100} height={100} />
           </td>
-          <td>{sanPham.soLuong}</td>
+          <td>
+            <button
+              className="btn btn-primary mr-2"
+              onClick={() => {
+                this.props.tangGiamSoLuong(sanPham.maSP, -1);
+              }}
+            >
+              -
+            </button>
+            {sanPham.soLuong}
+            <button
+              className="btn btn-primary ml-2"
+              onClick={() => {
+                this.props.tangGiamSoLuong(sanPham.maSP, 1);
+              }}
+            >
+              +
+            </button>
+          </td>
           <td>{sanPham.giaBan.toLocaleString()}</td>
           <td>{(sanPham.soLuong * sanPham.giaBan).toLocaleString()}</td>
           <td>
@@ -35,7 +69,9 @@ class GioHangRedux extends Component {
         <div className="text-right">
           <span>
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="ml-2">Giỏ hàng ({this.props.gioHang.length} sản phẩm)</span>
+            <span className="ml-2">
+              Giỏ hàng ({this.tinhTongSoLuong()} sản phẩm - {this.tinhTongTien().toLocaleString()} đ)
+            </span>
           </span>
         </div>
 
@@ -70,6 +106,14 @@ const mapDispatchToProps = (dispatch) => {
       const action = {
         type: "XOA_KHOI_GIO_HANG",
         maSanPhamXoa,
+      };
+      dispatch(action);
+    },
+    tangGiamSoLuong: (maSP, soLuong) => {
+      const action = {
+        type: "TANG_GIAM_SO_LUONG",
+        maSP,
+        soLuong,
       };
       dispatch(action);
     },

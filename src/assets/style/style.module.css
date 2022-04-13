@@ -1,0 +1,17 @@
+@font-face {
+  font-family: fontGame;
+  src: url(../font/Pony.ttf);
+}
+
+.main-game {
+  /* background-image: url(../img/bgGame.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; */
+  background-color: #020429;
+  width: 100vw;
+  height: 100vh;
+  font-family: fontGame;
+  text-transform: uppercase;
+  padding: 30px;
+}
