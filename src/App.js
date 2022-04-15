@@ -1,4 +1,4 @@
-import Home from "./components/BT_Layout/Home";
+// import Home from "./components/BT_Layout/Home";
 import DataBinding from "./components/DataBinding/DataBinding";
 import HandleEvent from "./components/HandleEvent/HandleEvent";
 import StateDemo from "./components/StateDemo/StateDemo";
@@ -15,6 +15,20 @@ import "./App.css";
 import Number from "./components/DemoRedux/Number";
 import BaiTapGioHang from "./components/DemoRedux/BaiTapGioHang";
 import MainGame from "./components/GameXucXac/MainGame.jsx";
+
+// route
+import { BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Home from "./pages/Home/Home.jsx";
+import About from "./pages/About/About.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
+import Login from "./pages/Login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
+import HeaderHome from "../src/components/HeaderHome/HeaderHome.jsx";
+import { Switch } from "react-router-dom";
+import Profile from "./pages/Profile/Profile";
+import Detail from "./pages/Detail/Detail";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
@@ -33,7 +47,32 @@ function App() {
     // <Number />
     // <ChonXeRedux />
     // <BaiTapGioHang />
-    <MainGame />
+    // <MainGame />
+
+    <BrowserRouter>
+      <Switch>
+        <Route
+          exact
+          path={"/home"}
+          render={(propsRoute) => {
+            return (
+              <div>
+                <HeaderHome />
+                <Home {...propsRoute} />
+              </div>
+            );
+          }}
+        />
+        <Route exact path={"/about"} component={About} />
+        <Route exact path={"/contact"} component={Contact} />
+        <Route exact path={"/login"} component={Login} />
+        <Route exact path={"/register"} component={Register} />
+        <Route exact path={"/profile"} component={Profile} />
+        <Route exact path={"/detail/:picID"} component={Detail} />
+        <Route exact path={"/search"} component={Search} />
+        <Route exact path={"/"} component={Home} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
