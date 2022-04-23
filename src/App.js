@@ -30,6 +30,7 @@ import Profile from "./pages/Profile/Profile";
 import Detail from "./pages/Detail/Detail";
 import Search from "./pages/Search/Search";
 import BaiTapQuanLyNguoiDung from "./pages/BaiTapQuanLyNguoiDung/BaiTapQuanLyNguoiDung";
+import LifeCycle from "./pages/LifeCycle/LifeCycle";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
         <Route exact path={"/detail/:picID"} component={Detail} />
         <Route exact path={"/search"} component={Search} />
         <Route exact path={"/btqlnd"} component={BaiTapQuanLyNguoiDung} />
+        <Route exact path={"/lifecycle"} component={LifeCycle} />
         <Route exact path={"/"} component={Home} />
       </Switch>
     </BrowserRouter>

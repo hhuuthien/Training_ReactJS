@@ -76,7 +76,27 @@ class FormDangKy extends Component {
     this.props.dispatch(action);
   };
 
+  /* Hướng giải quyết: Thay vì dữ liệu follow từ props => Chuyển dữ liệu sang state.value */
+
+  // static getDerivedStateFromProps(newProps, currentState) {
+  //   // lấy props từ redux về gán cho state trước render
+  //   if (currentState.value.taiKhoan !== newProps.nguoiDungSua.taiKhoan) {
+  //     currentState.value = { ...newProps.nguoiDungSua };
+  //   }
+
+  //   return currentState;
+  // }
+
+  componentWillReceiveProps(newProps) {
+    // Chỉ chạy khi props thay đổi chứ không chạy khi state thay đổi
+    this.setState({
+      value: newProps.nguoiDungSua,
+    });
+  }
+
   render() {
+    const { taiKhoan, hoTen } = this.state.value;
+
     return (
       <form className="mt-5" onSubmit={this.handleSubmit}>
         <div className="card">
@@ -93,6 +113,7 @@ class FormDangKy extends Component {
                     className="form-control"
                     id="taiKhoan"
                     name="taiKhoan"
+                    value={taiKhoan}
                     onChange={(e) => {
                       this.handleChange(e);
                     }}
@@ -106,6 +127,7 @@ class FormDangKy extends Component {
                     className="form-control"
                     id="hoTen"
                     name="hoTen"
+                    value={hoTen}
                     onChange={(e) => {
                       this.handleChange(e);
                     }}
@@ -176,6 +198,18 @@ class FormDangKy extends Component {
             <button type="submit" className="btn btn-success">
               Đăng ký
             </button>
+            <button
+              type="button"
+              className="btn btn-success ml-2"
+              onClick={() => {
+                this.props.dispatch({
+                  type: "CAP_NHAT_THONG_TIN",
+                  nguoiDungCapNhat: this.state.value,
+                });
+              }}
+            >
+              Cập nhật
+            </button>
           </div>
         </div>
       </form>
@@ -184,7 +218,9 @@ class FormDangKy extends Component {
 }
 
 const mapStateToProps = (rootReducer) => {
-  return {};
+  return {
+    nguoiDungSua: rootReducer.quanLyNguoiDungReducer.nguoiDungSua,
+  };
 };
 
 export default connect(mapStateToProps)(FormDangKy);

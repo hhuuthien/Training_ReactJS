@@ -50,6 +50,11 @@ export default class HeaderHome extends Component {
                   React form
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/lifecycle" activeClassName="bg-white text-dark" activeStyle={{ borderRadius: "10px" }}>
+                  Life Cycle
+                </NavLink>
+              </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="text" placeholder="Search" />
