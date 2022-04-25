@@ -31,6 +31,10 @@ import Detail from "./pages/Detail/Detail";
 import Search from "./pages/Search/Search";
 import BaiTapQuanLyNguoiDung from "./pages/BaiTapQuanLyNguoiDung/BaiTapQuanLyNguoiDung";
 import LifeCycle from "./pages/LifeCycle/LifeCycle";
+import DemoUseState from "./pages/Hook/DemoUseState";
+import DemoUseEffect from "./pages/Hook/DemoUseEffect";
+import DemoAPI_Class from "./pages/API/DemoAPI_Class";
+import DemoAPI_Hook from "./pages/API/DemoAPI_Hook";
 
 function App() {
   return (
@@ -64,6 +68,10 @@ function App() {
         <Route exact path={"/search"} component={Search} />
         <Route exact path={"/btqlnd"} component={BaiTapQuanLyNguoiDung} />
         <Route exact path={"/lifecycle"} component={LifeCycle} />
+        <Route exact path={"/usestate"} component={DemoUseState} />
+        <Route exact path={"/useeffect"} component={DemoUseEffect} />
+        <Route exact path={"/apiclass"} component={DemoAPI_Class} />
+        <Route exact path={"/apihook"} component={DemoAPI_Hook} />
         <Route exact path={"/"} component={Home} />
       </Switch>
     </BrowserRouter>

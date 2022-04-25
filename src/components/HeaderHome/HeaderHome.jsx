@@ -55,13 +55,26 @@ export default class HeaderHome extends Component {
                   Life Cycle
                 </NavLink>
               </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  React Hook
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <NavLink className="nav-link text-dark" to="/usestate">
+                    Use State
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/useeffect">
+                    Use Effect
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/apiclass">
+                    API Class
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/apihook">
+                    API Hook
+                  </NavLink>
+                </div>
+              </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </nav>
       </div>
