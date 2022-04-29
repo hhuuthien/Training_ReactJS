@@ -35,6 +35,9 @@ import DemoUseState from "./pages/Hook/DemoUseState";
 import DemoUseEffect from "./pages/Hook/DemoUseEffect";
 import DemoAPI_Class from "./pages/API/DemoAPI_Class";
 import DemoAPI_Hook from "./pages/API/DemoAPI_Hook";
+import CustomHook from "./pages/CustomHook/CustomHook";
+import TangGiamSoLuongHook from "./components/DemoRedux/TangGiamSoLuongHook";
+import API_Redux_Hook from "./pages/API/API_Redux_Hook";
 
 function App() {
   return (
@@ -72,6 +75,9 @@ function App() {
         <Route exact path={"/useeffect"} component={DemoUseEffect} />
         <Route exact path={"/apiclass"} component={DemoAPI_Class} />
         <Route exact path={"/apihook"} component={DemoAPI_Hook} />
+        <Route exact path={"/customhook"} component={CustomHook} />
+        <Route exact path={"/useselector"} component={TangGiamSoLuongHook} />
+        <Route exact path={"/reduxhook"} component={API_Redux_Hook} />
         <Route exact path={"/"} component={Home} />
       </Switch>
     </BrowserRouter>

@@ -72,6 +72,12 @@ export default class HeaderHome extends Component {
                   <NavLink className="nav-link text-dark" to="/apihook">
                     API Hook
                   </NavLink>
+                  <NavLink className="nav-link text-dark" to="/customhook">
+                    Custom Hook
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/reduxhook">
+                    Redux Hook
+                  </NavLink>
                 </div>
               </li>
             </ul>
