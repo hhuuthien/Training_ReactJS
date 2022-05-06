@@ -78,6 +78,18 @@ export default class HeaderHome extends Component {
                   <NavLink className="nav-link text-dark" to="/reduxhook">
                     Redux Hook
                   </NavLink>
+                  <NavLink className="nav-link text-dark" to="/usecallback">
+                    Use Callback
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/usememo">
+                    Use Memo
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/useref">
+                    Use Ref
+                  </NavLink>
+                  <NavLink className="nav-link text-dark" to="/thunk">
+                    Redux Thunk - To do list app
+                  </NavLink>
                 </div>
               </li>
             </ul>

@@ -38,6 +38,10 @@ import DemoAPI_Hook from "./pages/API/DemoAPI_Hook";
 import CustomHook from "./pages/CustomHook/CustomHook";
 import TangGiamSoLuongHook from "./components/DemoRedux/TangGiamSoLuongHook";
 import API_Redux_Hook from "./pages/API/API_Redux_Hook";
+import DemoUseCallBack from "./pages/Hook/DemoUseCallBack";
+import DemoUseMemo from "./pages/Hook/DemoUseMemo";
+import DemoUseRef from "./pages/Hook/DemoUseRef";
+import ToDoListApp from "./pages/Thunk/ToDoListApp";
 
 function App() {
   return (
@@ -78,6 +82,10 @@ function App() {
         <Route exact path={"/customhook"} component={CustomHook} />
         <Route exact path={"/useselector"} component={TangGiamSoLuongHook} />
         <Route exact path={"/reduxhook"} component={API_Redux_Hook} />
+        <Route exact path={"/usecallback"} component={DemoUseCallBack} />
+        <Route exact path={"/usememo"} component={DemoUseMemo} />
+        <Route exact path={"/useref"} component={DemoUseRef} />
+        <Route exact path={"/thunk"} component={ToDoListApp} />
         <Route exact path={"/"} component={Home} />
       </Switch>
     </BrowserRouter>
